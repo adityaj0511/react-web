@@ -37,7 +37,6 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 function Addcart() {
   const [data, setData] = useState([]);
@@ -46,25 +45,29 @@ function Addcart() {
     axios.get("http://localhost:8080/cart")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }
- 
+  };
 
   useEffect(() => {
     getData();
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mt-4">
+      <h1>Add to cart</h1>
       <div className="row">
         {data.map((e) => (
-          <div key={e.id} className="col-md-4 mb-4">
-            <div className="card" style={{marginLeft:"50%"}}>
-              <img src={e.image} alt={e.title} className="card-img-top img-fluid" style={{ maxHeight: "300px", objectFit: "cover" }} />
-              <div className="card-body">
-                <h5 className="card-title">{e.title}</h5>
-                <p className="card-text">Price: {e.price}</p>
+          <div key={e.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+            <div className="card shadow" style={{ width: "100%" }}>
+              <img
+                src={e.image}
+                alt={e.title}
+                className="card-img-top img-fluid"
+                style={{ maxHeight: "300px", objectFit: "cover" }}
+              />
+              <div className="card-body text-center">
+                <h5 className="card-title text-truncate">{e.title}</h5>
+                <p className="card-text">Price: ${e.price}</p>
                 <p className="card-text">Category: {e.category}</p>
-                
               </div>
             </div>
           </div>
@@ -75,3 +78,4 @@ function Addcart() {
 }
 
 export default Addcart;
+

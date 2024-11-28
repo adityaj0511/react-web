@@ -28,24 +28,6 @@
       "price": "$500.00"
     },
     {
-      "id": "7",
-      "title": "Stanton Technical Jacket",
-      "image": "https://cdn.shopify.com/s/files/1/0218/9988/files/m_stanton_jacket_hg_03.jpg?v=1693589083&width=2560&height=3328&crop=center",
-      "category": "",
-      "description": "Water-repellent, technical thermal layer ",
-      "Color": "Charcoal Heather",
-      "price": "$495.00"
-    },
-    {
-      "id": "9",
-      "title": "Anders Rain",
-      "image": "https://cdn.shopify.com/s/files/1/0218/9988/products/m_moto_boot_tan_01.jpg?v=1661887933&width=1024&height=1331&crop=center",
-      "category": "new",
-      "description": "waterproof & wind-resistant  ",
-      "Color": "Onyx Black",
-      "price": "$500.00"
-    },
-    {
       "id": "silverton_down_jacket",
       "title": "Silverton Down Jacket",
       "image": [
@@ -90,9 +72,9 @@
       "id": "77e9",
       "image": "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-sm-s921blbcins-thumb-539572328",
       "title": "Samsung ",
-      "price": " 75,000",
+      "price": "37,000",
       "category": "electronic",
-      "description": "Samsung Galaxy s23 "
+      "description": "Samsung Galaxy s23  "
     },
     {
       "id": "7db2",
@@ -284,6 +266,47 @@
       "price": "79.999$",
       "category": "electronic",
       "description": "Apple"
+    },
+    {
+      "id": "4",
+      "title": "Storm All-Weather Jacket",
+      "image": "https://cdn.shopify.com/s/files/1/0218/9988/files/m_storm_allweather_jacket_bone_01.jpg?v=1710969087&width=2560&height=3328&crop=center",
+      "category": "back in stock",
+      "description": "Waterproof & wind-resistant with pouch ",
+      "Color": "Bone",
+      "price": "$120.00"
+    },
+    {
+      "id": "7db2",
+      "image": "https://m.media-amazon.com/images/I/31VjlrbE3bL._SY445_SX342_QL70_FMwebp_.jpg",
+      "title": "Iphone",
+      "price": "55,000",
+      "category": "Electronic",
+      "description": "IPHONE 13"
+    },
+    {
+      "id": "7",
+      "title": "Stanton Technical Jacket",
+      "image": "https://cdn.shopify.com/s/files/1/0218/9988/files/m_stanton_jacket_hg_03.jpg?v=1693589083&width=2560&height=3328&crop=center",
+      "category": "",
+      "description": "Water-repellent, technical thermal layer ",
+      "Color": "Charcoal Heather",
+      "price": "$495.00"
+    },
+    {
+      "id": "endeavor_jacket",
+      "title": "Endeavor Jacket",
+      "image": [
+        "https://cdn.shopify.com/s/files/1/0218/9988/products/m_endeavor_jacket_dg_01.jpg?v=1661885187&width=2560&height=3328&crop=center",
+        "https://cdn.shopify.com/s/files/1/0218/9988/products/m_endeavor_jacket_dg_02.jpg?v=1661885188&width=2560&height=3328&crop=center",
+        "https://cdn.shopify.com/s/files/1/0218/9988/products/m_endeavor_jacket_dg_03.jpg?v=1661885189&width=2560&height=3328&crop=center",
+        "https://cdn.shopify.com/s/files/1/0218/9988/products/m_endeavor_jacket_dg_04.jpg?v=1661885190&width=2560&height=3328&crop=center",
+        "https://cdn.sanity.io/images/e5o7qwlw/production/e83bec98aae1fbf0a248d8631062008c4904ff5b-44x44.png?w=2560&h=2560&q=75&auto=format"
+      ],
+      "category": "wind-resistant",
+      "description": "Color: Duffle Green",
+      "price": "$655.00",
+      "url": "https://aetherapparel.com/products/endeavor-jacket-duffle-green"
     }
   ]
 }

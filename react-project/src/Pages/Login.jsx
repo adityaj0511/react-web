@@ -266,8 +266,6 @@
 // export default Login;
 
 
-
-
 import React, { useState } from "react";
 // import { auth, provider, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "../services/firebase"; // Adjust the import path based on your Firebase setup
 import { GoogleButton } from 'react-google-button';
@@ -305,79 +303,117 @@ function Login() {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row">
-        <div className="col-md-6">
-          <h2>Login</h2>
-          <p>If you have an account, please sign in with your email address.</p>
-          <form onSubmit={handleSubmitClick}>
-            <div className="form-group">
-              <label htmlFor="loginEmail">Email</label>
-              <input
-                type="email"
-                className="form-control"
-                id="loginEmail"
-                placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+    <div className="container mt-5" style={{ maxWidth: "1200px", margin: "auto" }}>
+      <div className="row justify-content-center">
+        {/* Card Wrapper */}
+        <div className="col-md-10 col-lg-8" style={{ padding: "20px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)", borderRadius: "10px", backgroundColor: "#fff" }}>
+          <div className="row">
+            {/* Login Section */}
+            <div className="col-md-6" style={{ padding: "20px" }}>
+              <h2 style={{ fontWeight: "bold", color: "#333" }}>Login</h2>
+              <p>If you have an account, please sign in with your email address.</p>
+              <form onSubmit={handleSubmitClick}>
+                <div className="form-group" style={{ marginBottom: "15px" }}>
+                  <label htmlFor="loginEmail">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="loginEmail"
+                    placeholder="Enter email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    style={{
+                      padding: "10px",
+                      borderRadius: "5px",
+                      borderColor: "#ddd",
+                    }}
+                  />
+                </div>
+                <div className="form-group" style={{ marginBottom: "15px" }}>
+                  <label htmlFor="loginPassword">Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="loginPassword"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    style={{
+                      padding: "10px",
+                      borderRadius: "5px",
+                      borderColor: "#ddd",
+                    }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-success mt-3"
+                  style={{ width: "100%", padding: "10px", borderRadius: "5px" }}
+                >
+                  Sign In
+                </button>
+                <div className="mt-3">
+                  <a href=" " style={{ textDecoration: "none", color: "#007bff" }}>
+                    Forgot your password?
+                  </a>
+                </div>
+              </form>
+              <div style={{ marginTop: "15px", textAlign: "center" }}>
+                <GoogleButton onClick={handleGoogleSignIn} />
+              </div>
             </div>
-            <div className="form-group">
-              <label htmlFor="loginPassword">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                id="loginPassword"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+
+            {/* Create Account Section */}
+            <div className="col-md-6" style={{ padding: "20px" }}>
+              <h2 style={{ fontWeight: "bold", color: "#333" }}>Create Account</h2>
+              <p>
+                Creating an account has many benefits: check out faster, keep more
+                than one address, track orders and more.
+              </p>
+              {/* Create form */}
+              <form onSubmit={handleCreateSubmit}>
+                <div className="form-group" style={{ marginBottom: "15px" }}>
+                  <label htmlFor="createEmail">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="createEmail"
+                    placeholder="Enter email"
+                    value={createEmail}
+                    onChange={(e) => setCreateEmail(e.target.value)}
+                    style={{
+                      padding: "10px",
+                      borderRadius: "5px",
+                      borderColor: "#ddd",
+                    }}
+                  />
+                </div>
+                <div className="form-group" style={{ marginBottom: "15px" }}>
+                  <label htmlFor="createPassword">Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="createPassword"
+                    placeholder="Password"
+                    value={createPassword}
+                    onChange={(e) => setCreatePassword(e.target.value)}
+                    style={{
+                      padding: "10px",
+                      borderRadius: "5px",
+                      borderColor: "#ddd",
+                    }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-primary mt-3"
+                  style={{ width: "100%", padding: "10px", borderRadius: "5px" }}
+                >
+                  Create Account
+                </button>
+              </form>
             </div>
-            <button type="submit" className="btn btn-success mt-3">
-              Sign In
-            </button>
-            <div className="mt-3">
-              <a href=" ">Forgot your password?</a>
-            </div>
-          </form>
-          <div style={{ marginTop: "15px" }}>
-            <GoogleButton onClick={handleGoogleSignIn} />
           </div>
-        </div>
-        <div className="col-md-6">
-          <h2>Create Account</h2>
-          <p>
-            Creating an account has many benefits: check out faster, keep more
-            than one address, track orders and more.
-          </p>
-          {/* Create form */}
-          <form onSubmit={handleCreateSubmit}>
-            <div className="form-group">
-              <label htmlFor="createEmail">Email</label>
-              <input
-                type="email"
-                className="form-control"
-                id="createEmail"
-                placeholder="Enter email"
-                value={createEmail}
-                onChange={(e) => setCreateEmail(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="createPassword">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                id="createPassword"
-                placeholder="Password"
-                value={createPassword}
-                onChange={(e) => setCreatePassword(e.target.value)}
-              />
-            </div>
-            <button type="submit" className="btn btn-primary mt-3">
-              Create Account
-            </button>
-          </form>
         </div>
       </div>
     </div>

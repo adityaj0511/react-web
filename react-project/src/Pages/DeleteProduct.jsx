@@ -16,30 +16,39 @@ const DeleteProduct = () => {
   }, [id]);
 
   return (
-    <div>
-      <h2>Deleted Products</h2>
-      <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "20px", fontFamily: "Arial, sans-serif" }}>
-        <thead>
-          <tr style={{ backgroundColor: "#4CAF50", color: "white" }}>
-            <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left" }}>Image</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left" }}>Title</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left" }}>Category</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left" }}>Price</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left" }}>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {deletedProducts.map((product, index) => (
-            <tr key={index} style={{ backgroundColor: index % 2 === 0 ? "#f2f2f2" : "white" }}>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}><img src={product.image} alt={product.title} width={100} style={{ borderRadius: "8px" }} /></td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{product.title}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{product.category}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>${product.price}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{product.description}</td>
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Deleted Products</h2>
+      <div className="table-responsive">
+        <table className="table table-striped table-bordered">
+          <thead className="table-success">
+            <tr>
+              <th scope="col">Image</th>
+              <th scope="col">Title</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Description</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {deletedProducts.map((product, index) => (
+              <tr key={index}>
+                <td>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="img-fluid"
+                    style={{ maxWidth: "100px", borderRadius: "8px" }}
+                  />
+                </td>
+                <td>{product.title}</td>
+                <td>{product.category}</td>
+                <td>${product.price}</td>
+                <td>{product.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

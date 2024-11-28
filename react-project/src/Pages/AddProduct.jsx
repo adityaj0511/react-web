@@ -13,7 +13,7 @@ const AddProduct = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProductData({...productData, [name]: value});
+    setProductData({ ...productData, [name]: value });
   };
 
   const handleSubmit = (e) => {
@@ -34,52 +34,66 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Add Product</h2><br />
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="image"
-          placeholder="Enter image URL"
-          value={productData.image}
-          onChange={handleChange}
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
-        /><br /><br />
-        <input
-          type="text"
-          name="title"
-          placeholder="Enter Product Title"
-          value={productData.title}
-          onChange={handleChange}
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
-        /><br /><br />
-        <input
-          type="text"
-          name="price"
-          placeholder="Enter Product Price"
-          value={productData.price}
-          onChange={handleChange}
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
-        /><br /><br />
-        <input
-          type="text"
-          name="category"
-          placeholder="Enter Product Category"
-          value={productData.category}
-          onChange={handleChange}
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
-        /><br /><br />
-        <input
-          type="text"
-          name="description"
-          placeholder="Enter Product Description"
-          value={productData.description}
-          onChange={handleChange}
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
-        /><br /><br />
-
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>ADD-PRODUCT</button>
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Add Product</h2>
+      <form onSubmit={handleSubmit} className="row g-3">
+        <div className="col-12">
+          <input
+            type="text"
+            name="image"
+            className="form-control"
+            placeholder="Enter image URL"
+            value={productData.image}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-12">
+          <input
+            type="text"
+            name="title"
+            className="form-control"
+            placeholder="Enter Product Title"
+            value={productData.title}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-md-6">
+          <input
+            type="text"
+            name="price"
+            className="form-control"
+            placeholder="Enter Product Price"
+            value={productData.price}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-md-6">
+          <input
+            type="text"
+            name="category"
+            className="form-control"
+            placeholder="Enter Product Category"
+            value={productData.category}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-12">
+          <textarea
+            name="description"
+            className="form-control"
+            rows="4"
+            placeholder="Enter Product Description"
+            value={productData.description}
+            onChange={handleChange}
+          ></textarea>
+        </div>
+        <div className="col-12 d-flex justify-content-center">
+          <button
+            type="submit"
+            className="btn btn-success px-5 py-2"
+          >
+            ADD-PRODUCT
+          </button>
         </div>
       </form>
     </div>

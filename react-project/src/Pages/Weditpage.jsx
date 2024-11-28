@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import "../App.css"
+import "../App.css"; // Ensure your App.css contains custom styles
 
 const Weditpage = () => {
   const [editProduct, setEditProduct] = useState({
@@ -33,7 +33,6 @@ const Weditpage = () => {
     axios.put(`http://localhost:8080/Womenproduct/${id}`, editProduct)
       .then((res) => {
         console.log('Product updated successfully:', res.data);
-        console.log(editProduct);
         alert('Product updated successfully');
 
         setEditHistory([...editHistory, editProduct]);
@@ -52,8 +51,8 @@ const Weditpage = () => {
   return (
     <div className="container mt-5">
       <h2 className="bg-danger text-white text-center p-2">Edit Product</h2>
-      <div className="d-flex justify-content-evenly flex-wrap mt-4">
-        <div className="border p-3 rounded-lg mb-4" style={{ width: '45%' }}>
+      <div className="d-flex flex-column flex-lg-row justify-content-evenly flex-wrap mt-4">
+        <div className="border p-3 rounded-lg mb-4" style={{ width: '100%', maxWidth: '500px' }}>
           <b>{editProduct.id}</b>
           <h1>{editProduct.title}</h1>
           <img src={editProduct.images} alt={editProduct.title} className="img-fluid img-animate" />
@@ -61,7 +60,7 @@ const Weditpage = () => {
           <p>Category: {editProduct.category}</p>
           <p>{editProduct.description}</p>
         </div>
-        <form onSubmit={handleSubmit} className="border p-3 rounded-lg mb-4" style={{ width: '45%' }}>
+        <form onSubmit={handleSubmit} className="border p-3 rounded-lg mb-4" style={{ width: '100%', maxWidth: '500px' }}>
           <div className="form-group">
             <label>Title</label>
             <input
@@ -144,7 +143,7 @@ const Weditpage = () => {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
 export default Weditpage;
